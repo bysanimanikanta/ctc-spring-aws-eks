@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-aws-eks-deployment
+  labels:
+    app: spring-aws-eks
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: spring-aws-eks
+  template:
+    metadata:
+      labels:
+        app: spring-aws-eks
+    spec:
+      containers:
+        - name: spring-aws-eks
+          image: <<Replace with ECR image>>
+          ports:
+            - containerPort: 3000
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: spring-aws-eks-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: spring-aws-eks
+  ports:
+    - protocol: TCP
+      port: 443
+      targetPort: 3000
