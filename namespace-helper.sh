@@ -10,4 +10,4 @@ if [ -z "$LANID" ]; then
 fi
 
 echo "Replacing all the k8s object files with $LANID as namespaces"
-sed -i '' "s/REPLACEME/$LANID/g" k8s/*.yaml
+sed -i "s/REPLACEME/$LANID/g" k8s/*.yaml
