@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: spring-aws-eks-service
-  namespace: <<REPLACE_WITH_LAN_ID>>
+  namespace: REPLACEME
 spec:
   type: NodePort
   selector:

@@ -4,7 +4,7 @@ metadata:
   name: spring-aws-eks-deployment
   labels:
     app: spring-aws-eks
-  namespace: <<REPLACE_WITH_LAN_ID>>
+  namespace: REPLACEME
 spec:
   replicas: 3
   selector:
