@@ -18,4 +18,7 @@ spec:
         - name: spring-aws-eks
           image: <<REPLACE WITH DOCKER IMAGE>>>
           ports:
-            - containerPort: 3000
+            - containerPort: 8086
+          envFrom:
+            - configMapRef:
+                name: spring-aws-eks-config
