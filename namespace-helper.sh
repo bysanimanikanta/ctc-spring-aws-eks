@@ -4,7 +4,7 @@ set -e
 echo "Please enter your LanID to create K8s objects in your namespace"
 read LANID
 
-if [z "$LANID"]; then
+if [ -z "$LANID" ]; then
 	echo "Do not try to break me!!! Please enter your LAN ID"
 	exit 1
 fi
