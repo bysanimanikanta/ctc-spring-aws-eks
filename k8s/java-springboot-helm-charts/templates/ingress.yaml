@@ -21,7 +21,7 @@ spec:
     - http:
         paths:
           - path: /
-            pathType: {{ .pathType }}
+            pathType: Prefix
             backend:
               service:
                 name: {{ $fullName }}-service
