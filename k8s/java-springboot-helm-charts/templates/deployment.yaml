@@ -24,4 +24,4 @@ spec:
             - containerPort: {{ .Values.service.port }}
           envFrom:
             - configMapRef:
-                name: spring-aws-eks-config
+                name: {{ include "java-springboot-helm-charts.fullname" . }}-config
