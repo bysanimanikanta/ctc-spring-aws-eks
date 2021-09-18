@@ -1,0 +1,58 @@
+# Default values for java-springboot-helm-templates.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 2
+
+image:
+  repository: 112834256162.dkr.ecr.us-east-1.amazonaws.com/eh1364/aws-spring-boot-eks
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "0.0.5-SNAPSHOT"
+
+imagePullSecrets: []
+nameOverride: "spring-aws-eks"
+fullnameOverride: "spring-aws-eks"
+
+podAnnotations: {}
+
+service:
+  type: NodePort
+  port: 8086
+  targetPort: 8086
+
+ingress:
+  enabled: true
+#  annotations:
+  hosts:
+    - paths:
+        - path: /
+          pathType: Prefix
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+json:
+  MESSAGE_FROM: AWS
