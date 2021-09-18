@@ -53,6 +53,3 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-
-json:
-  MESSAGE_FROM: AWS

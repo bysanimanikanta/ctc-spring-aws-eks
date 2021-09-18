@@ -4,9 +4,4 @@ metadata:
   name: {{ include "java-springboot-helm-charts.fullname" .}}-config
   namespace: {{ .Release.Namespace }}
 data:
-  config.json: |-
-    {
-{{- range $key, $val := .Values.json }}
-{{ $key | quote | indent 6 }}: {{ $val | quote }}
-{{- end }}
-    }
+  MESSAGE_FROM: AWS
