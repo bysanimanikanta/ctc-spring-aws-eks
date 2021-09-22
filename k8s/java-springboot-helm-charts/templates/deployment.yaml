@@ -22,6 +22,11 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: {{ .Values.service.port }}
+          resources:
+            requests:
+              cpu: "200m"
+            limits:
+              cpu: "500m"
           envFrom:
             - configMapRef:
                 name: {{ include "java-springboot-helm-charts.fullname" . }}-config

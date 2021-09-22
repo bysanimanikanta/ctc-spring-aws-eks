@@ -5,7 +5,7 @@
 replicaCount: 2
 
 image:
-  repository: 112834256162.dkr.ecr.us-east-1.amazonaws.com/eh1364/aws-spring-boot-eks
+  repository: REPLACEDOCKERIMAGE
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "0.0.5-SNAPSHOT"
