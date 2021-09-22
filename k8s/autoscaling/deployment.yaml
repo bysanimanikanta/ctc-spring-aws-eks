@@ -24,6 +24,11 @@ spec:
           image: REPLACEDOCKERIMAGE
           ports:
             - containerPort: 8086
+          resources:
+            requests:
+              cpu: "100m"
+            limits:
+              cpu: "100m"
           envFrom:
             - configMapRef:
                 name: spring-aws-eks-config
