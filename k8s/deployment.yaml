@@ -14,10 +14,10 @@ spec:
     metadata:
       labels:
         app: spring-aws-eks
-        annotations:
-          prometheus.io/scrape: "true"
-          prometheus.io/port: "8086"
-          prometheus.io/path: "/actuator/prometheus"
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8086"
+        prometheus.io/path: "/actuator/prometheus"
     spec:
       containers:
         - name: spring-aws-eks
