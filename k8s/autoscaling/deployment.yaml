@@ -26,9 +26,9 @@ spec:
             - containerPort: 8086
           resources:
             requests:
-              cpu: "100m"
+              cpu: "5m"
             limits:
-              cpu: "100m"
+              cpu: "50m"
           envFrom:
             - configMapRef:
                 name: spring-aws-eks-config
