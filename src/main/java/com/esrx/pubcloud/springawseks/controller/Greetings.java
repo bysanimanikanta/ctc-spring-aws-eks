@@ -16,7 +16,7 @@ public class Greetings {
     @Autowired
     BuildProperties  buildProperties;
 
-    @RequestMapping("greet")
+    @RequestMapping("greetings")
     public String greet() {
         return "Message from " + messageFrom + ": Hello, this is CTC Lab day and application version is " +
                 buildProperties.getArtifact() + "-" + buildProperties.getVersion();
