@@ -22,6 +22,7 @@ spec:
       containers:
         - name: spring-aws-eks
           image: REPLACEDOCKERIMAGE
+          imagePullPolicy: Always
           ports:
             - containerPort: 8086
           envFrom:
