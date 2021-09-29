@@ -1,5 +1,5 @@
 # Build + Test Maven Project
-FROM maven:3.8.2-openjdk-8-slim AS build
+FROM maven:3.8.2-openjdk-11-slim AS build
 
 # Do the build
 COPY . .
@@ -12,7 +12,7 @@ RUN ls -la /work
 RUN cd /work; jar -xvf project.jar
 
 # Create the Spring Boot Image
-FROM openjdk:8-jdk-slim
+FROM openjdk:11-jdk-slim
 
 VOLUME /tmp
 
