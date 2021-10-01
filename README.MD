@@ -1,10 +1,25 @@
 # CTC-SPRING-AWS-EKS
 
-This is a sample springboot application for AWS EKS
+This is a sample Springboot application which will be used for AWS EKS deployments.
 
 
-In order to use helm template,
+Resource exposed for consumption,
+
+`/labday/greetings`
+
+Returns a string by grabbing a value from environment variable and build properties `artifactId` & `version`.
+
+
+## Local Development
+
+1. Build the project using,
 
 ```
-helm template spring-aws-eks -n eh1364 java-springboot-helm-charts -f java-springboot-helm-charts/values.yaml >> generated.yaml
+mvn clean install
+```
+
+2. Start the application using,
+
+```
+mvn spring-boot:run
 ```
